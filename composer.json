@@ -1,0 +1,23 @@
+{
+  "name": "sumbavoyage/core",
+  "description": "",
+  "type": "library",
+  "keywords": [],
+  "license": "Proprietary",
+  "authors": [
+    {
+      "name": "Yohann Frelicot",
+      "email": "dev@sumbavoyage.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-0": {
+      "Svs\\Core\\Entity\\": "src/",
+      "Svs\\Core\\Repository\\": "src/"
+    }
+  }
+}
