@@ -14,9 +14,8 @@
     "php": ">=7.1"
   },
   "autoload": {
-    "psr-0": {
-      "Svs\\Core\\Entity\\": "src/",
-      "Svs\\Core\\Repository\\": "src/"
+    "psr-4": {
+      "Svs\\Core\\": "vendor/sumbavoyage/core/"
     }
   }
 }
