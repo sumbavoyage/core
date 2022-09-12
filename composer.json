@@ -13,7 +13,6 @@
   "require": {
     "php": ">=7.1"
   },
-  "minimum-stability": "dev",
   "autoload": {
     "psr-0": {
       "Svs\\Core\\Entity\\": "src/",
