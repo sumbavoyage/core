@@ -20,7 +20,7 @@
             "type": "package",
             "package": {
                 "name": "sumbavoyage/core",
-                "version": "0.1.2",
+                "version": "0.1.3",
                 "type": "package",
                 "source": {
                     "url": "https://sumbavoyage@github.com/sumbavoyage/core.git",
