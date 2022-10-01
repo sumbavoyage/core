@@ -55,6 +55,11 @@ class Lead
      */
     private $arrivalDate;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $uri;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -140,6 +145,18 @@ class Lead
     public function setArrivalDate(?\DateTimeInterface $arrivalDate): self
     {
         $this->arrivalDate = $arrivalDate;
+
+        return $this;
+    }
+
+    public function getUri(): ?string
+    {
+        return $this->uri;
+    }
+
+    public function setUri(?string $uri): self
+    {
+        $this->uri = $uri;
 
         return $this;
     }
