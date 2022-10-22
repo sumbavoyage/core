@@ -160,18 +160,18 @@ class MediaObject
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getFilename(): string
+    public function getFilename(): ?string
     {
         return $this->filename;
     }
 
     /**
-     * @param string $filename
+     * @param null|string $filename
      * @return $this
      */
-    public function setFilename(string $filename): self
+    public function setFilename(?string $filename): self
     {
         $this->filename = $filename;
 
