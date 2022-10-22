@@ -68,4 +68,9 @@ class PackTranslation extends AbstractTranslation
     {
         return $this->description;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

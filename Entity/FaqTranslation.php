@@ -68,4 +68,9 @@ class FaqTranslation extends AbstractTranslation
     {
         $this->answer = $answer;
     }
+
+    public function __toString()
+    {
+        return $this->question;
+    }
 }

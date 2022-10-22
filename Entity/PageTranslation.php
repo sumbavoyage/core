@@ -85,4 +85,9 @@ class PageTranslation extends AbstractTranslation
     {
         return $this->h1;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }

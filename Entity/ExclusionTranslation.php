@@ -51,4 +51,9 @@ class ExclusionTranslation extends AbstractTranslation
     {
         return $this->name;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

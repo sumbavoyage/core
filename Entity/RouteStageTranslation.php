@@ -85,4 +85,9 @@ class RouteStageTranslation extends AbstractTranslation
     {
         return $this->hotelDescription;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

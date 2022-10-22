@@ -102,4 +102,9 @@ class AdvertMediaTranslation extends AbstractTranslation
     {
         return $this->buttonText;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

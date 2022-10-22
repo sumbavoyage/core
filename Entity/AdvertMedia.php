@@ -228,4 +228,9 @@ class AdvertMedia extends AbstractTranslatable
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return !empty($this->getName()) ? $this->getName() : $this->getTitle();
+    }
 }
