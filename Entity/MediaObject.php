@@ -122,9 +122,7 @@ class MediaObject
         // we use the original file name here but you should
         // sanitize it at least to avoid any security issues
 
-        $storage = new StorageClient([
-            'keyFilePath' => 'C:\Users\yfrel\Downloads\sumbavoyage-898a73b34ae0.json'
-        ]);
+        $storage = new StorageClient();
 
         $bucket = $storage->bucket($_ENV['GCS_MEDIA_BUCKET_NAME']);
 
