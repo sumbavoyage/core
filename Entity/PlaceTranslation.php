@@ -38,7 +38,7 @@ class PlaceTranslation extends AbstractTranslation
     private $name;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      *
      * @Groups({"post_read", "post_write", "translations"})
      */
