@@ -60,7 +60,7 @@ class AdvertMedia extends AbstractTranslatable
      * @var MediaObject|null
      *
      * @ORM\ManyToOne(targetEntity=MediaObject::class, fetch="EAGER")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      * @ApiProperty(iri="http://schema.org/image")
      * @Groups({"advert_media_read", "post_read", "post_write", "translations"})
      */

@@ -70,7 +70,7 @@ class Guide extends AbstractTranslatable
      * @var MediaObject|null
      *
      * @ORM\ManyToOne(targetEntity=MediaObject::class)
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=true, onDelete="SET NULL")
      * @ApiProperty(iri="http://schema.org/image")
      * @Groups({"guide_read", "post_read", "post_write", "translations"})
      */

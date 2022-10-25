@@ -147,4 +147,9 @@ class RouteStage extends AbstractTranslatable
     {
         return new RouteStageTranslation();
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

@@ -100,4 +100,9 @@ class CancellationPolicy extends AbstractTranslatable
     {
         return new CancellationPolicyTranslation();
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
