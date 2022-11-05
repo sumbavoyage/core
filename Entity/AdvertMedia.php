@@ -67,7 +67,8 @@ class AdvertMedia extends AbstractTranslatable
     public $image;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Advert::class, mappedBy="images")
+     * @ORM\ManyToMany(targetEntity=Advert::class)
+     * @Groups({"advert_media_read", "post_read", "post_write", "translations"})
      */
     private $adverts;
 
@@ -112,8 +113,9 @@ class AdvertMedia extends AbstractTranslatable
 
     public function __construct()
     {
-        parent::__construct();
         $this->adverts = new ArrayCollection();
+
+        parent::__construct();
     }
 
     public function getId(): ?int
@@ -151,6 +153,7 @@ class AdvertMedia extends AbstractTranslatable
 
     public function removeAdvert(Advert $advert): self
     {
+        exit;
         if ($this->adverts->removeElement($advert)) {
             $advert->removeImage($this);
         }
