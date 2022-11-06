@@ -59,7 +59,7 @@ class Advert
     private $code;
 
     /**
-     * @ORM\ManyToMany(targetEntity=AdvertMedia::class, inversedBy="adverts")
+     * @ORM\ManyToMany(targetEntity=AdvertMedia::class)
      * @Groups({"post_write", "translations"})
      */
     private $images;
