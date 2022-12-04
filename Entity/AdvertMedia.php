@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Doctrine\ORM\Mapping\JoinTable;
 
 use Locastic\ApiPlatformTranslationBundle\Model\AbstractTranslatable;
 use Locastic\ApiPlatformTranslationBundle\Model\TranslationInterface;
@@ -68,6 +69,10 @@ class AdvertMedia extends AbstractTranslatable
 
     /**
      * @ORM\ManyToMany(targetEntity=Advert::class)
+     * @JoinTable(name="advert_medias_adverts",
+     *      joinColumns={@ORM\JoinColumn(name="advert_media_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="advert_id", referencedColumnName="id")}
+     *      )
      * @Groups({"advert_media_read", "post_read", "post_write", "translations"})
      */
     private $adverts;
