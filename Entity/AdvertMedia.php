@@ -68,14 +68,10 @@ class AdvertMedia extends AbstractTranslatable
     public $image;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Advert::class)
-     * @JoinTable(name="advert_medias_adverts",
-     *      joinColumns={@ORM\JoinColumn(name="advert_media_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="advert_id", referencedColumnName="id")}
-     *      )
+     * @ORM\ManyToOne(targetEntity=Advert::class, inversedBy="images")
      * @Groups({"advert_media_read", "post_read", "post_write", "translations"})
      */
-    private $adverts;
+    private $advert;
 
     /**
      * @ORM\OneToMany(targetEntity="AdvertMediaTranslation", mappedBy="translatable", fetch="EXTRA_LAZY", indexBy="locale", cascade={"PERSIST"}, orphanRemoval=true)
@@ -118,8 +114,6 @@ class AdvertMedia extends AbstractTranslatable
 
     public function __construct()
     {
-        $this->adverts = new ArrayCollection();
-
         parent::__construct();
     }
 
@@ -138,30 +132,14 @@ class AdvertMedia extends AbstractTranslatable
         $this->getTranslation()->setName($name);
     }
 
-    /**
-     * @return Collection<int, Advert>
-     */
-    public function getAdverts(): Collection
+    public function getAdvert(): ?Advert
     {
-        return $this->adverts;
+        return $this->advert;
     }
 
-    public function addAdvert(Advert $advert): self
+    public function setAdvert(?Advert $advert): self
     {
-        if (!$this->adverts->contains($advert)) {
-            $this->adverts[] = $advert;
-            $advert->addImage($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAdvert(Advert $advert): self
-    {
-        exit;
-        if ($this->adverts->removeElement($advert)) {
-            $advert->removeImage($this);
-        }
+        $this->advert = $advert;
 
         return $this;
     }

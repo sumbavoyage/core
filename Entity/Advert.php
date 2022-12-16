@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Doctrine\ORM\Mapping\JoinTable;
 
 /**
  * @ORM\Entity(repositoryClass=AdvertRepository::class)
@@ -59,7 +60,7 @@ class Advert
     private $code;
 
     /**
-     * @ORM\ManyToMany(targetEntity=AdvertMedia::class)
+     * @ORM\OneToMany(targetEntity=AdvertMedia::class, mappedBy="advert")
      * @Groups({"post_write", "translations"})
      */
     private $images;
