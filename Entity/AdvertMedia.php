@@ -112,11 +112,6 @@ class AdvertMedia extends AbstractTranslatable
      */
     private $buttonRoute;
 
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
     public function getId(): ?int
     {
         return $this->id;

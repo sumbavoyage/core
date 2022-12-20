@@ -68,4 +68,9 @@ class BlockTranslation extends AbstractTranslation
     {
         $this->content = $content;
     }
+
+    public function __toString()
+    {
+        return '[' . $this->getLocale() . '] ' . $this->getTitle();
+    }
 }

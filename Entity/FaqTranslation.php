@@ -54,7 +54,7 @@ class FaqTranslation extends AbstractTranslation
         return $this->question;
     }
 
-    public function setQuestion(string $question): void
+    public function setQuestion(?string $question): void
     {
         $this->question = $question;
     }
@@ -64,7 +64,7 @@ class FaqTranslation extends AbstractTranslation
         return $this->answer;
     }
 
-    public function setAnswer(string $answer): void
+    public function setAnswer(?string $answer): void
     {
         $this->answer = $answer;
     }
