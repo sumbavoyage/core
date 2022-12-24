@@ -175,9 +175,15 @@ class Tour extends AbstractTranslatable
      */
     private $pack;
 
+    /**
+     * @ORM\OneToMany(targetEntity=TourRouteStagePosition::class, mappedBy="tour", cascade={"PERSIST"})
+     */
+    private $routeStagePositions;
+
     public function __construct()
     {
         $this->routeStages = new ArrayCollection();
+        $this->routeStagePositions = new ArrayCollection();
 
         parent::__construct();
     }
@@ -419,5 +425,54 @@ class Tour extends AbstractTranslatable
         $this->pack = $pack;
 
         return $this;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @return Collection<int, TourRouteStagePosition>
+     */
+    public function getRouteStagePositions(): Collection
+    {
+        return $this->routeStagePositions;
+    }
+
+    public function addRouteStagePosition(TourRouteStagePosition $tourRouteStagePosition): self
+    {
+        if (!$this->routeStagePositions->contains($tourRouteStagePosition)) {
+            $this->routeStagePositions[] = $tourRouteStagePosition;
+            $tourRouteStagePosition->setTour($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRouteStagePosition(TourRouteStagePosition $tourRouteStagePosition): self
+    {
+        if ($this->routeStagePositions->removeElement($tourRouteStagePosition)) {
+            // set the owning side to null (unless already changed)
+            if ($tourRouteStagePosition->getTour() === $this) {
+                $tourRouteStagePosition->setTour(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 }
