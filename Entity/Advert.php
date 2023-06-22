@@ -60,6 +60,11 @@ class Advert
     private $code;
 
     /**
+     * @ORM\OneToMany(targetEntity=Activity::class, mappedBy="advert")
+     */
+    private $activities;
+
+    /**
      * @ORM\OneToMany(targetEntity=AdvertMedia::class, mappedBy="advert")
      * @Groups({"post_write", "translations"})
      */
@@ -67,6 +72,7 @@ class Advert
 
     public function __construct()
     {
+        $this->activities = new ArrayCollection();
         $this->images = new ArrayCollection();
     }
 
@@ -119,6 +125,39 @@ class Advert
     public function removeImage(AdvertMedia $image): self
     {
         $this->images->removeElement($image);
+
+        return $this;
+    }
+
+
+
+
+    /**
+     * @return Collection<int, Activity>
+     */
+    public function getActivities(): Collection
+    {
+        return $this->activities;
+    }
+
+    public function addActivity(Activity $activity): self
+    {
+        if (!$this->activities->contains($activity)) {
+            $this->activities[] = $activity;
+            $activity->setAdvert($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActivity(Activity $activity): self
+    {
+        if ($this->activities->removeElement($activity)) {
+            // set the owning side to null (unless already changed)
+            if ($activity->getAdvert() === $this) {
+                $activity->setAdvert(null);
+            }
+        }
 
         return $this;
     }
