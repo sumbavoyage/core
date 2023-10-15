@@ -84,6 +84,12 @@ class MediaObject
     public $updated;
 
     /**
+     * @ORM\ManyToOne(targetEntity=Land::class, inversedBy="images")
+     * @Groups({"media_object_read"})
+     */
+    protected $land;
+
+    /**
      * @ORM\ManyToOne(targetEntity=Place::class, inversedBy="images")
      * @Groups({"media_object_read"})
      */
@@ -193,6 +199,25 @@ class MediaObject
     public function setUpdated(?\DateTime $updated): self
     {
         $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * @return null|Land
+     */
+    public function getLand(): ?Land
+    {
+        return $this->land;
+    }
+
+    /**
+     * @param null|Land $land
+     * @return $this
+     */
+    public function setLand(?Land $land): self
+    {
+        $this->land = $land;
 
         return $this;
     }

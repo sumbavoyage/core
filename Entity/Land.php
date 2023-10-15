@@ -194,11 +194,22 @@ class Land extends AbstractTranslatable
     public $mainImage;
 
     /**
+     * @ORM\OneToMany(targetEntity=MediaObject::class, mappedBy="land")
+     * @Groups({"post_write", "translations"})
+     */
+    public $images;
+
+    /**
      * @ORM\OneToMany(targetEntity="LandTranslation", mappedBy="translatable", fetch="EXTRA_LAZY", indexBy="locale", cascade={"PERSIST"}, orphanRemoval=true)
      *
      * @Groups({"post_write", "translations"})
      */
     protected $translations;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
