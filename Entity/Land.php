@@ -107,6 +107,66 @@ class Land extends AbstractTranslatable
     private $introText3;
 
     /**
+     * @Groups({"post_read"})
+     */
+    private $faqTitle1;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqText1;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqTitle2;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqText2;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqTitle3;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqText3;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqTitle4;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqText4;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqTitle5;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqText5;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqTitle6;
+
+    /**
+     * @Groups({"post_read"})
+     */
+    private $faqText6;
+
+    /**
      * @ORM\Column(type="integer")
      * @Groups({"post_write", "translations"})
      */
@@ -249,6 +309,126 @@ class Land extends AbstractTranslatable
     public function setIntroText3(?string $introText3): self
     {
         $this->getTranslation()->setIntroText3($introText3);
+    }
+
+    public function getFaqTitle1(): ?string
+    {
+        return $this->getTranslation()->getFaqTitle1();
+    }
+
+    public function setFaqTitle1(?string $faqTitle1): self
+    {
+        $this->getTranslation()->setFaqTitle1($faqTitle1);
+    }
+
+    public function getFaqText1(): ?string
+    {
+        return $this->getTranslation()->getFaqText1();
+    }
+
+    public function setFaqText1(?string $faqText1): self
+    {
+        $this->getTranslation()->setFaqText1($faqText1);
+    }
+
+    public function getFaqTitle2(): ?string
+    {
+        return $this->getTranslation()->getFaqTitle2();
+    }
+
+    public function setFaqTitle2(?string $faqTitle2): self
+    {
+        $this->getTranslation()->setFaqTitle2($faqTitle2);
+    }
+
+    public function getFaqText2(): ?string
+    {
+        return $this->getTranslation()->getFaqText2();
+    }
+
+    public function setFaqText2(?string $faqText2): self
+    {
+        $this->getTranslation()->setFaqText2($faqText2);
+    }
+
+    public function getFaqTitle3(): ?string
+    {
+        return $this->getTranslation()->getFaqTitle3();
+    }
+
+    public function setFaqTitle3(?string $faqTitle3): self
+    {
+        $this->getTranslation()->setFaqTitle3($faqTitle3);
+    }
+
+    public function getFaqText3(): ?string
+    {
+        return $this->getTranslation()->getFaqText3();
+    }
+
+    public function setFaqText3(?string $faqText3): self
+    {
+        $this->getTranslation()->setFaqText3($faqText3);
+    }
+
+    public function getFaqTitle4(): ?string
+    {
+        return $this->getTranslation()->getFaqTitle4();
+    }
+
+    public function setFaqTitle4(?string $faqTitle4): self
+    {
+        $this->getTranslation()->setFaqTitle4($faqTitle4);
+    }
+
+    public function getFaqText4(): ?string
+    {
+        return $this->getTranslation()->getFaqText4();
+    }
+
+    public function setFaqText4(?string $faqText4): self
+    {
+        $this->getTranslation()->setFaqText4($faqText4);
+    }
+
+    public function getFaqTitle5(): ?string
+    {
+        return $this->getTranslation()->getFaqTitle5();
+    }
+
+    public function setFaqTitle5(?string $faqTitle5): self
+    {
+        $this->getTranslation()->setFaqTitle5($faqTitle5);
+    }
+
+    public function getFaqText5(): ?string
+    {
+        return $this->getTranslation()->getFaqText5();
+    }
+
+    public function setFaqText5(?string $faqText5): self
+    {
+        $this->getTranslation()->setFaqText5($faqText5);
+    }
+
+    public function getFaqTitle6(): ?string
+    {
+        return $this->getTranslation()->getFaqTitle6();
+    }
+
+    public function setFaqTitle6(?string $faqTitle6): self
+    {
+        $this->getTranslation()->setFaqTitle6($faqTitle6);
+    }
+
+    public function getFaqText6(): ?string
+    {
+        return $this->getTranslation()->getFaqText6();
+    }
+
+    public function setFaqText6(?string $faqText6): self
+    {
+        $this->getTranslation()->setFaqText6($faqText6);
     }
 
     public function getPrice(): ?int
