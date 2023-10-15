@@ -178,6 +178,12 @@ class Land extends AbstractTranslatable
     private $description;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"post_write", "translations"})
+     */
+    private $googleMapUrl;
+
+    /**
      * @var MediaObject|null
      *
      * @ORM\ManyToOne(targetEntity=MediaObject::class, fetch="EAGER")
@@ -451,6 +457,18 @@ class Land extends AbstractTranslatable
     public function setDescription(string $description): self
     {
         $this->getTranslation()->setDescription($description);
+    }
+
+    public function getGoogleMapUrl(): ?string
+    {
+        return $this->googleMapUrl;
+    }
+
+    public function setGoogleMapUrl(?string $googleMapUrl): self
+    {
+        $this->googleMapUrl = $googleMapUrl;
+
+        return $this;
     }
 
     protected function createTranslation(): TranslationInterface
