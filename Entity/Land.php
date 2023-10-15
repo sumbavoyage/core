@@ -486,4 +486,9 @@ class Land extends AbstractTranslatable
     {
         return new LandTranslation();
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
