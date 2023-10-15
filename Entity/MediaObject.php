@@ -72,6 +72,13 @@ class MediaObject
     /**
      * @var string|null
      *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    public $category;
+
+    /**
+     * @var string|null
+     *
      * @ORM\Column(type="string", nullable=false)
      */
     public $filename;
@@ -163,6 +170,25 @@ class MediaObject
     public function refreshUpdated(): void
     {
         $this->setUpdated(new \DateTime());
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param null|string $category
+     * @return $this
+     */
+    public function setCategory(?string $category): self
+    {
+        $this->category = $category;
+
+        return $this;
     }
 
     /**
