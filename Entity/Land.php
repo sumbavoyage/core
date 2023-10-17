@@ -5,6 +5,7 @@ namespace Svs\Core\Entity;
 use Svs\Core\Entity\MediaObject;
 use Svs\Core\Repository\LandRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 use ApiPlatform\Core\Annotation\ApiResource;
