@@ -74,7 +74,7 @@ class LandTranslation extends AbstractTranslation
     private $faqTitle1;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      *
      * @Groups({"post_read", "post_write", "translations"})
      */
@@ -88,7 +88,7 @@ class LandTranslation extends AbstractTranslation
     private $faqTitle2;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      *
      * @Groups({"post_read", "post_write", "translations"})
      */
@@ -102,7 +102,7 @@ class LandTranslation extends AbstractTranslation
     private $faqTitle3;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      *
      * @Groups({"post_read", "post_write", "translations"})
      */
@@ -116,7 +116,7 @@ class LandTranslation extends AbstractTranslation
     private $faqTitle4;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      *
      * @Groups({"post_read", "post_write", "translations"})
      */
@@ -130,7 +130,7 @@ class LandTranslation extends AbstractTranslation
     private $faqTitle5;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      *
      * @Groups({"post_read", "post_write", "translations"})
      */
@@ -144,12 +144,18 @@ class LandTranslation extends AbstractTranslation
     private $faqTitle6;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      *
      * @Groups({"post_read", "post_write", "translations"})
      */
     private $faqText6;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     *
+     * @Groups({"post_read", "post_write", "translations"})
+     */
+    private $priceText;
 
     public function getId(): ?int
     {
@@ -324,6 +330,16 @@ class LandTranslation extends AbstractTranslation
     public function getFaqText6(): ?string
     {
         return $this->faqText6;
+    }
+
+    public function setPriceText(?string $priceText): void
+    {
+        $this->priceText = $priceText;
+    }
+
+    public function getPriceText(): ?string
+    {
+        return $this->priceText;
     }
 
     public function __toString()

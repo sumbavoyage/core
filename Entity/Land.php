@@ -66,6 +66,12 @@ class Land extends AbstractTranslatable
      * @ORM\Column(type="boolean")
      * @Groups({"post_write", "translations"})
      */
+    private $hasAgent;
+
+    /**
+     * @ORM\Column(type="boolean")
+     * @Groups({"post_write", "translations"})
+     */
     private $hasRoad;
 
     /**
@@ -168,6 +174,11 @@ class Land extends AbstractTranslatable
     private $faqText6;
 
     /**
+     * @Groups({"post_read"})
+     */
+    private $priceText;
+
+    /**
      * @ORM\Column(type="integer")
      * @Groups({"post_write", "translations"})
      */
@@ -235,6 +246,18 @@ class Land extends AbstractTranslatable
     public function setSquareMetersArea(?int $squareMetersArea): self
     {
         $this->squareMetersArea = $squareMetersArea;
+
+        return $this;
+    }
+
+    public function isHasAgent(): ?bool
+    {
+        return $this->hasAgent;
+    }
+
+    public function setHasAgent(bool $hasAgent): self
+    {
+        $this->hasAgent = $hasAgent;
 
         return $this;
     }
@@ -447,6 +470,16 @@ class Land extends AbstractTranslatable
     public function setFaqText6(?string $faqText6): self
     {
         $this->getTranslation()->setFaqText6($faqText6);
+    }
+
+    public function getPriceText(): ?string
+    {
+        return $this->getTranslation()->getPriceText();
+    }
+
+    public function setPriceText(?string $priceText): self
+    {
+        $this->getTranslation()->setPriceText($priceText);
     }
 
     public function getPrice(): ?int
