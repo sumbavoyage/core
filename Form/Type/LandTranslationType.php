@@ -31,6 +31,7 @@ class LandTranslationType extends AbstractType
             ->add('faqTitle6', TextType::class)
             ->add('faqText6', CKEditorType::class)
             ->add('description', CKEditorType::class)
+            ->add('priceText', CKEditorType::class)
             ->add('locale', TextType::class)
         ;
     }
