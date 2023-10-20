@@ -40,7 +40,7 @@ class LandTranslation extends AbstractTranslation
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Gedmo\Slug(fields={"name"})
+     * @Gedmo\Slug(fields={"slug"})
      */
     private $slug;
 
