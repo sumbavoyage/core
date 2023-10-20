@@ -39,6 +39,12 @@ class LandTranslation extends AbstractTranslation
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Gedmo\Slug(fields={"name"})
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="text")
      *
      * @Groups({"post_read", "post_write", "translations"})
@@ -170,6 +176,16 @@ class LandTranslation extends AbstractTranslation
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function setSlug(string $slug): void
+    {
+        $this->slug = $slug;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
     }
 
     public function setDescription(string $description): void

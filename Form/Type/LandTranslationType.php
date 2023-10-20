@@ -15,6 +15,7 @@ class LandTranslationType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
+            ->add('slug', TextType::class)
             ->add('introText1', TextType::class)
             ->add('introText2', TextType::class)
             ->add('introText3', TextType::class)
