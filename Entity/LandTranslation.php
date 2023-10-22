@@ -45,6 +45,13 @@ class LandTranslation extends AbstractTranslation
     private $slug;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @Groups({"post_read", "post_write", "translations"})
+     */
+    private $location;
+
+    /**
      * @ORM\Column(type="text")
      *
      * @Groups({"post_read", "post_write", "translations"})
@@ -186,6 +193,16 @@ class LandTranslation extends AbstractTranslation
     public function getSlug(): ?string
     {
         return $this->slug;
+    }
+
+    public function setLocation(string $location): void
+    {
+        $this->location = $location;
+    }
+
+    public function getLocation(): string
+    {
+        return $this->location;
     }
 
     public function setDescription(string $description): void

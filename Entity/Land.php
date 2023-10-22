@@ -62,6 +62,11 @@ class Land extends AbstractTranslatable
     private $slug;
 
     /**
+     * @Groups({"post_read"})
+     */
+    private $location;
+
+    /**
      * @ORM\Column(type="integer", nullable=true)
      * @Groups({"post_write", "translations"})
      */
@@ -251,6 +256,16 @@ class Land extends AbstractTranslatable
     public function setSlug(string $slug): void
     {
         $this->getTranslation()->setSlug($slug);
+    }
+
+    public function getLocation(): string
+    {
+        return $this->getTranslation()->getLocation();
+    }
+
+    public function setLocation(string $location): self
+    {
+        $this->getTranslation()->setLocation($location);
     }
 
     public function getSquareMetersArea(): ?int
