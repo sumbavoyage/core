@@ -200,6 +200,11 @@ class Land extends AbstractTranslatable
     private $description;
 
     /**
+     * @Groups({"post_read"})
+     */
+    private $shortDescription;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"post_write", "translations"})
      */
@@ -532,6 +537,16 @@ class Land extends AbstractTranslatable
     public function setDescription(string $description): self
     {
         $this->getTranslation()->setDescription($description);
+    }
+
+    public function getShortDescription(): string
+    {
+        return $this->getTranslation()->getShortDescription();
+    }
+
+    public function setShortDescription(string $shortDescription): self
+    {
+        $this->getTranslation()->setShortDescription(Short);
     }
 
     public function getGoogleMapUrl(): ?string

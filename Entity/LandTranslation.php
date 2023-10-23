@@ -59,6 +59,13 @@ class LandTranslation extends AbstractTranslation
     private $description;
 
     /**
+     * @ORM\Column(type="text")
+     *
+     * @Groups({"post_read", "post_write", "translations"})
+     */
+    private $shortDescription;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @Groups({"post_read", "post_write", "translations"})
@@ -213,6 +220,16 @@ class LandTranslation extends AbstractTranslation
     public function getDescription(): ?string
     {
         return $this->description;
+    }
+
+    public function setShortDescription(string $shortDescription): void
+    {
+        $this->shortDescription = $shortDescription;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
     }
 
     public function setIntroText1(?string $introText1): void
