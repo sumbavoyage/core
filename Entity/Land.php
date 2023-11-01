@@ -62,6 +62,12 @@ class Land extends AbstractTranslatable
     private $slug;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups({"post_write", "translations"})
+     */
+    private $zone;
+
+    /**
      * @Groups({"post_read"})
      */
     private $location;
@@ -261,6 +267,18 @@ class Land extends AbstractTranslatable
     public function setSlug(string $slug): void
     {
         $this->getTranslation()->setSlug($slug);
+    }
+
+    public function getZone(): string
+    {
+        return $this->zone;
+    }
+
+    public function setZone(string $zone): self
+    {
+        $this->zone = $zone;
+
+        return $this;
     }
 
     public function getLocation(): string
