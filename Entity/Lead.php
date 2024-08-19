@@ -43,7 +43,22 @@ class Lead
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
+    private $nightsNumber;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
     private $paxNumber;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $adultsNumber;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $childrenNumber;
 
     /**
      * @ORM\Column(type="text")
@@ -54,6 +69,11 @@ class Lead
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $arrivalDate;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $departureDate;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -113,6 +133,18 @@ class Lead
         return $this;
     }
 
+    public function getNightsNumber(): ?int
+    {
+        return $this->nightsNumber;
+    }
+
+    public function setNightsNumber(?int $nightsNumber): self
+    {
+        $this->nightsNumber = $nightsNumber;
+
+        return $this;
+    }
+
     public function getPaxNumber(): ?int
     {
         return $this->paxNumber;
@@ -121,6 +153,30 @@ class Lead
     public function setPaxNumber(?int $paxNumber): self
     {
         $this->paxNumber = $paxNumber;
+
+        return $this;
+    }
+
+    public function getAdultsNumber(): ?int
+    {
+        return $this->adultsNumber;
+    }
+
+    public function setAdultsNumber(?int $adultsNumber): self
+    {
+        $this->adultsNumber = $adultsNumber;
+
+        return $this;
+    }
+
+    public function getChildrenNumber(): ?int
+    {
+        return $this->childrenNumber;
+    }
+
+    public function setChildrenNumber(?int $childrenNumber): self
+    {
+        $this->childrenNumber = $childrenNumber;
 
         return $this;
     }
@@ -145,6 +201,18 @@ class Lead
     public function setArrivalDate(?\DateTimeInterface $arrivalDate): self
     {
         $this->arrivalDate = $arrivalDate;
+
+        return $this;
+    }
+
+    public function getDepartureDate(): ?\DateTimeInterface
+    {
+        return $this->departureDate;
+    }
+
+    public function setDepartureDate(?\DateTimeInterface $departureDate): self
+    {
+        $this->departureDate = $departureDate;
 
         return $this;
     }
