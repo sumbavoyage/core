@@ -103,6 +103,12 @@ class Land extends AbstractTranslatable
     private $hasCertificate;
 
     /**
+     * @ORM\Column(type="boolean")
+     * @Groups({"post_write", "translations"})
+     */
+    private $soldOut;
+
+    /**
      * @ORM\Column(type="integer")
      * @Groups({"post_write", "translations"})
      */
@@ -347,6 +353,18 @@ class Land extends AbstractTranslatable
     public function setHasCertificate(bool $hasCertificate): self
     {
         $this->hasCertificate = $hasCertificate;
+
+        return $this;
+    }
+
+    public function isSoldOut(): ?bool
+    {
+        return $this->soldOut;
+    }
+
+    public function setSoldOut(bool $soldOut): self
+    {
+        $this->soldOut = $soldOut;
 
         return $this;
     }
