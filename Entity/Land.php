@@ -223,6 +223,12 @@ class Land extends AbstractTranslatable
     private $googleMapUrl;
 
     /**
+     * @ORM\Column(type="boolean")
+     * @Groups({"post_write", "translations"})
+     */
+    private $enabled;
+
+    /**
      * @var MediaObject|null
      *
      * @ORM\ManyToOne(targetEntity=MediaObject::class, fetch="EAGER")
@@ -593,6 +599,18 @@ class Land extends AbstractTranslatable
     public function setGoogleMapUrl(?string $googleMapUrl): self
     {
         $this->googleMapUrl = $googleMapUrl;
+
+        return $this;
+    }
+
+    public function isEnabled(): ?bool
+    {
+        return $this->enabled;
+    }
+
+    public function setEnabled(bool $enabled): self
+    {
+        $this->enabled = $enabled;
 
         return $this;
     }
