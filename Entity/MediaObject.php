@@ -103,6 +103,12 @@ class MediaObject
     protected $place;
 
     /**
+     * @ORM\ManyToOne(targetEntity=News::class, inversedBy="images")
+     * @Groups({"media_object_read"})
+     */
+    protected $news;
+
+    /**
      * Unmapped property to handle file uploads
      */
     private ?UploadedFile $file = null;
@@ -263,6 +269,25 @@ class MediaObject
     public function setPlace(?Place $place): self
     {
         $this->place = $place;
+
+        return $this;
+    }
+
+    /**
+     * @return null|News
+     */
+    public function getNews(): ?News
+    {
+        return $this->news;
+    }
+
+    /**
+     * @param null|News $news
+     * @return $this
+     */
+    public function setNews(?News $news): self
+    {
+        $this->news = $news;
 
         return $this;
     }
