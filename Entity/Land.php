@@ -588,7 +588,7 @@ class Land extends AbstractTranslatable
 
     public function setShortDescription(string $shortDescription): self
     {
-        $this->getTranslation()->setShortDescription(Short);
+        $this->getTranslation()->setShortDescription($shortDescription);
     }
 
     public function getGoogleMapUrl(): ?string
