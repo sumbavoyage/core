@@ -52,7 +52,7 @@ class News extends AbstractTranslatable
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $date;
 
@@ -100,12 +100,12 @@ class News extends AbstractTranslatable
         return $this->id;
     }
 
-    public function getDate(): \DateTimeInterface
+    public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(?\DateTimeInterface $date): self
     {
         $this->date = $date;
 
