@@ -223,6 +223,18 @@ class Land extends AbstractTranslatable
     private $googleMapUrl;
 
     /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Groups({"post_write", "translations"})
+     */
+    private $lat;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     * @Groups({"post_write", "translations"})
+     */
+    private $lng;
+
+    /**
      * @ORM\Column(type="boolean")
      * @Groups({"post_write", "translations"})
      */
@@ -599,6 +611,30 @@ class Land extends AbstractTranslatable
     public function setGoogleMapUrl(?string $googleMapUrl): self
     {
         $this->googleMapUrl = $googleMapUrl;
+
+        return $this;
+    }
+
+    public function getLat(): ?float
+    {
+        return $this->lat;
+    }
+
+    public function setLat(?float $lat): self
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    public function getLng(): ?float
+    {
+        return $this->lng;
+    }
+
+    public function setLng(?float $lng): self
+    {
+        $this->lng = $lng;
 
         return $this;
     }
